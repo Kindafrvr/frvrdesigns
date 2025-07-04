@@ -1,0 +1,351 @@
+@font-face {
+  font-family: "Quicksilver";
+  src: url("Fonts/Quicksilver.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Montserrat";
+  src: url("Fonts/Montserrat-Medium.ttf") format("truetype");
+  font-weight: 500;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Montserrat";
+  src: url("Fonts/Montserrat-Bold.ttf") format("truetype");
+  font-weight: 700;
+  font-style: normal;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+* {
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE and Edge */
+}
+*::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, Opera */
+}
+/* === General Styles === */
+
+.body1 {
+  margin: 0;
+  padding: 0;
+  font-family: "Montserrat";
+  background: #f7f8fa;
+  /* Remove overflow: hidden; and height: 100vh; if present */
+}
+
+.shop-countdown {
+  font-family: "montserrat", sans-serif;
+  margin-top: 18px;
+  font-size: 1.1rem;
+  color: #205b8e;
+  background: #f0f6fa;
+  padding: 8px 18px;
+  border-radius: 8px;
+  display: inline-block;
+  font-weight: 600;
+}
+#particles-js {
+  position: absolute;
+  width: 100%;
+  background-color: #f8f9fc; /* You can make this transparent if needed */
+  z-index: -1;
+  top: 0;
+  left: 0;
+}
+/* === Top Bar Rectangle Background === */
+.top-bar-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 90px;
+  background: linear-gradient(90deg, #0f5396 0%, #1670ca 50%, #0f5396 100%);
+  z-index: 1;
+}
+
+/* === Navigation Bar === */
+nav {
+  width: 100%;
+  padding: 0 3%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 2;
+  height: 90px;
+  gap: 20px;
+}
+
+/* === Logo === */
+.logo {
+  width: 65px;
+  height: 65px;
+  object-fit: contain;
+  border-radius: 50%;
+  border: 2px solid #fff;
+  background: transparent;
+  z-index: 2;
+}
+
+/* === Brands Border and Scroller === */
+.brands-border {
+  flex: 1 1 auto;
+  height: 60px;
+  margin: 0 20px;
+  border-radius: 8px;
+  border-left: 1px solid #e6ebf8;
+  border-right: 1px solid #e6ebf8;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  position: relative;
+  z-index: 2;
+  min-width: 0;
+  box-shadow: -16px 0 32px -8px rgba(56, 71, 163, 0.18),
+    16px 0 32px -8px rgba(56, 71, 163, 0.18);
+}
+.brands {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+  animation: scrollBrands 14s linear infinite;
+  will-change: transform;
+}
+.brands img {
+  height: 40px;
+  width: auto;
+  object-fit: contain;
+  user-select: none;
+  pointer-events: none;
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.07));
+}
+@keyframes scrollBrands {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+/* === Menu Icon === */
+.menu-icon {
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+  z-index: 4;
+  display: block;
+}
+
+/* === Navigation Links (Sidebar Menu) === */
+.nav-links {
+  list-style: none;
+  display: none;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 220px;
+  height: 100%;
+  background: #fff;
+  box-shadow: -4px 0 24px 0 rgba(31, 38, 135, 0.12);
+  border-radius: 0 0 0 24px;
+  z-index: 15;
+  transition: right 0.4s cubic-bezier(0.77, 0, 0.18, 1);
+  padding: 40px 30px 30px 30px;
+  gap: 24px;
+  border-left: 2px solid #e6ebf8;
+}
+.nav-links.show {
+  display: flex;
+}
+.nav-links.show {
+  display: flex;
+}
+.nav-links li a {
+  color: #222;
+  font-size: 1.3rem;
+  text-decoration: none;
+  transition: font-size 0.3s, color 0.3s;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+.nav-links li {
+  transition: font-size 0.3s;
+}
+.nav-links li:hover a {
+  font-size: 2rem;
+  color: #3a5cff;
+}
+.nav-links li:not(:hover) a {
+  font-size: 1rem;
+  color: #222;
+}
+.nav-links:hover li:not(:hover) a {
+  opacity: 0.6;
+}
+
+/* === Description Section === */
+.description {
+  position: absolute;
+  top: 47%;
+  left: 0;
+  transform: translateY(-50%);
+  text-align: left;
+  z-index: 2;
+  padding-left: 40px;
+  max-width: 45vw;
+}
+.description h1 {
+  margin-top: 20px;
+  font-family: Montserrat-Bold, sans-serif;
+  font-size: 3.5rem;
+  font-weight: 1000;
+  background: linear-gradient(
+    270deg,
+    #105498,
+    #1a6fb8,
+    #43a0dd,
+    #1a6fb8,
+    #105498
+  );
+
+  background-size: 800% 100%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: gradientMove 5s linear infinite;
+}
+@keyframes gradientMove {
+  0% {
+    background-position: 0% 50%;
+  }
+  100% {
+    background-position: 100% 50%;
+  }
+}
+.description p {
+  font-size: 1.15rem;
+  font-weight: 500;
+  color: #222;
+  margin-bottom: 10px;
+  line-height: 1.6;
+}
+.desc-highlight {
+  font-weight: 500;
+
+  display: block;
+  margin-top: 6px;
+}
+.desc-tagline {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #5564c1;
+  margin-top: 10px;
+}
+
+/* === Projects Section (Horizontal Stacked Cards) === */
+.projects {
+  position: absolute;
+  top: 50%;
+  right: 0;
+  transform: translateY(-50%);
+  width: 48vw;
+  min-width: 320px;
+  max-width: 600px;
+  text-align: right;
+  z-index: 2;
+  padding-right: 40px;
+}
+.project-images {
+  display: flex;
+  flex-direction: row; /* Stack images horizontally */
+  align-items: center;
+  justify-content: flex-end;
+  gap: 0; /* We'll use negative margin for overlap */
+  position: relative;
+  height: 340px;
+}
+/* === Card Stack Effect for Clickable Project Images === */
+.project-images a {
+  display: block;
+  margin-left: -60px; /* Overlap each card to the left */
+  transition: z-index 0.2s;
+  z-index: 1;
+}
+.project-images a:first-child {
+  margin-left: 0; /* No overlap for the first card */
+}
+.project-images img {
+  width: 180px;
+  height: 340px;
+  object-fit: cover;
+  border-radius: 18px;
+  box-shadow: 0 4px 24px rgba(56, 71, 163, 0.13);
+  border: 3px solid #fff;
+  transition: transform 0.35s cubic-bezier(0.77, 0, 0.18, 1), box-shadow 0.3s;
+  cursor: pointer;
+  z-index: 1;
+  display: block;
+}
+.project-images a:hover {
+  z-index: 10; /* Bring hovered card to front */
+}
+.project-images a:hover img {
+  transform: scale(1.08); /* Enlarge hovered image */
+  box-shadow: 0 8px 32px rgba(56, 71, 163, 0.22);
+}
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.7);
+  justify-content: center;
+  align-items: center;
+}
+.modal img {
+  max-width: 90vw;
+  max-height: 90vh;
+  border-radius: 12px;
+}
+.modal.active {
+  display: flex;
+}
+.shop-countdown {
+  margin-top: 90vh;
+  font-size: 1.1rem;
+  color: #205b8e;
+  background: #f0f6fa;
+  padding: 8px 18px;
+  border-radius: 8px;
+  display: inline-block;
+  font-weight: 600;
+}
+/* === Footer === */
+.footer-text {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  text-align: center;
+  color: #022175;
+  padding: 10px 0;
+  z-index: 10;
+  font-size: 0.9rem;
+  /* No background */
+}
