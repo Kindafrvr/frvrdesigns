@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The 66th</title>
+    <style>
+        embed, iframe {
+            border: 1px solid #ccc;
+            border-radius: 8px;
+        }
+        /*
+         * Center the PDF both vertically and horizontally
+         * - display: flex enables flexbox layout
+         * - justify-content: center centers content horizontally
+         * - align-items: center centers content vertically
+         * - width: 100vw makes the container full viewport width
+         * - min-height: 100vh makes the container at least full viewport height
+         */
+        .pdf-viewer {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100vw;
+            min-height: 100vh;
+        }
+    </style>
+</head>
+<body>
+ <div class="pdf-viewer">
+     <iframe src="Images/66TH.pdf" width="80%" height="600px"></iframe>
+ </div>
+</body>
+</html>
